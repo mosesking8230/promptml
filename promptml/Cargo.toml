@@ -1,0 +1,23 @@
+[package]
+name = "promptml"
+version = "0.1.0"
+edition = "2021"
+description = "Type-safe LLM prompt templates for Rust — catch missing variables at compile time"
+license = "MIT OR Apache-2.0"
+keywords = ["llm", "prompt", "template", "ai", "openai"]
+categories = ["template-engine", "text-processing"]
+repository    = "https://github.com/ptcodes/promptml"
+homepage      = "https://github.com/ptcodes/promptml"
+documentation = "https://docs.rs/promptml"
+readme        = "README.md"
+exclude       = ["tests/compile_fail/*", ".github/*"]
+
+[dependencies]
+thiserror = "1"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+promptml-macros = { path = "../promptml-macros" }
+
+[dev-dependencies]
+pretty_assertions = "1"
+trybuild = { version = "1", features = ["diff"] }
